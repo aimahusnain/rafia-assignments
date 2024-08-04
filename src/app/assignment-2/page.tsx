@@ -47,12 +47,12 @@ const ComplexPage: React.FC = () => {
         </header>
 
         <main className="container mx-auto p-4">
-          <section className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
+          <section className="grid grid-cols-1 text-white md:grid-cols-3 gap-4 mb-8">
+            <div className="bg-green-500 p-6 rounded-lg shadow-md">
               <h2 className="text-xl font-semibold mb-4">Card 1</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md md:col-span-2">
+            <div className="bg-yellow-500 p-6 rounded-lg shadow-md md:col-span-2">
               <h2 className="text-xl font-semibold mb-4">Card 2</h2>
               <p>
                 Sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -65,7 +65,7 @@ const ComplexPage: React.FC = () => {
             {["Item 1", "Item 2", "Item 3"].map((item, index) => (
               <div
                 key={index}
-                className="flex-1  p-6 rounded-lg shadow-md"
+                className={`flex-1 p-6 rounded-lg shadow-md ${index === 0 && "bg-orange-500 text-white"} ${index === 1 && "bg-blue-500 text-white"} ${index === 2 && "bg-green-500 text-white"}`}
               >
                 <h2 className="text-xl font-semibold mb-4">{item}</h2>
                 <p>
