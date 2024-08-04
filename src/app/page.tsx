@@ -33,9 +33,8 @@ const HomePage = () => {
       </motion.div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {assignmentButtons.map((assignment, index) => (
-          <Link href={assignment.link}>
+          <Link href={assignment.link} key={index}>
             <motion.button
-              key={index}
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"

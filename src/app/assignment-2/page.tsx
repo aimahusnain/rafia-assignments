@@ -65,7 +65,7 @@ const ComplexPage: React.FC = () => {
             {["Item 1", "Item 2", "Item 3"].map((item, index) => (
               <div
                 key={index}
-                className="flex-1 bg-white p-6 rounded-lg shadow-md"
+                className="flex-1  p-6 rounded-lg shadow-md"
               >
                 <h2 className="text-xl font-semibold mb-4">{item}</h2>
                 <p>
@@ -111,7 +111,7 @@ const ComplexPage: React.FC = () => {
               <h2 className="text-xl font-semibold mb-4">Sidebar</h2>
               <ul className="space-y-2">
                 {["Item 1", "Item 2", "Item 3"].map((item, index) => (
-                  <li key={index} className={`p-2 rounded ${index === 0 && "bg-fuchsia-300"} ${index === 1 && "bg-emerald-300"}`}>
+                  <li key={index} className={`p-2 rounded ${index === 0 && "bg-fuchsia-300"} ${index === 1 && "bg-emerald-300"} ${index === 2 && "bg-amber-300"}`}>
                     {item}
                   </li>
                 ))}
