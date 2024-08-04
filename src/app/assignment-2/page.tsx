@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import { cn } from "@/lib/utils";
 
 const ComplexPage: React.FC = () => {
   return (
@@ -80,11 +81,13 @@ const ComplexPage: React.FC = () => {
             {[1, 2, 3, 4].map((num) => (
               <div
                 key={num}
-                className={`bg-white p-4 rounded-lg shadow-md aspect-square flex items-center justify-center ${
-                  num === 1 && "bg-red-500 text-white"
-                } ${num === 3 && "bg-blue-500 text-white"} ${
-                  num === 2 && "bg-green-500 text-white"
-                } ${num === 4 && "bg-pink-500 text-white"}`}
+                className={cn(
+                  "p-4 rounded-lg shadow-md aspect-square flex items-center justify-center",
+                  num === 1 && "bg-red-500 text-white",
+                  num === 2 && "bg-green-500 text-white",
+                  num === 3 && "bg-blue-500 text-white",
+                  num === 4 && "bg-pink-500 text-white"
+                )}
               >
                 <span className="text-2xl font-bold">{num}</span>
               </div>
@@ -100,7 +103,7 @@ const ComplexPage: React.FC = () => {
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {["Title 1", "Title 2"].map((item, index) => (
-                  <div key={index} className={`p-4 rounded ${index === 0 && "bg-sky-400"} ${index === 1 && "bg-lime-400"}`}>
+                  <div key={index} className={cn("p-4 rounded", index === 0 ? "bg-sky-400" : "bg-lime-400")}>
                     <h3 className="font-semibold mb-2">{item}</h3>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation.</p>
                   </div>
@@ -123,16 +126,17 @@ const ComplexPage: React.FC = () => {
             {Array.from({ length: 8 }).map((_, index) => (
               <div
                 key={index}
-                className={`bg-white p-4 rounded-lg shadow-md text-white 
-                  ${index === 0 && "bg-rose-500"}
-                  ${index === 1 && "bg-yellow-500 text-black"} ${
-                  index === 2 && "bg-red-500"
-                } ${index === 3 && "bg-emerald-500"} ${
-                  index === 4 && "bg-blue-500"
-                } ${index === 5 && "bg-cyan-500"} 
-                ${index === 6 && "bg-indigo-500"} ${
-                  index === 7 && "bg-violet-500"
-                } `}
+                className={cn(
+                  "p-4 rounded-lg shadow-md",
+                  index === 0 && "bg-rose-500 text-white",
+                  index === 1 && "bg-yellow-500 text-black",
+                  index === 2 && "bg-red-500 text-white",
+                  index === 3 && "bg-emerald-500 text-white",
+                  index === 4 && "bg-blue-500 text-white",
+                  index === 5 && "bg-cyan-500 text-white",
+                  index === 6 && "bg-indigo-500 text-white",
+                  index === 7 && "bg-violet-500 text-white"
+                )}
               >
                 <div className="bg-zinc-300 flex items-center justify-center text-black w-full h-32 rounded mb-4">Image</div>
                 <h3 className="font-semibold mb-2">Card Title {index + 1}</h3>
